@@ -1,0 +1,360 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\restylefloat{table}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{rotating}
+\author{Baharak Saberidokht}
+\title{hwk}
+\begin{document}
+\maketitle
+
+
+
+\section*{Problem 1.}
+
+
+\section*{Problem 2.}
+\subsection*{2-a)}
+$H_{0} : \mu <= 3.5 $ \\
+$H_{1} : \mu > 3.5 $ \\
+It is one tail test; so, critical value is $1.645$ : \\
+$\frac{\overline{X} - \mu}{\sigma /\sqrt n} = \frac{4.2 - 3.5}{\sqrt{1.96} / 3}$ ; as $1.5 < 1.645 $ ; then, we fail to reject $H_{0}$.
+
+\subsection*{2-b) }
+Unnormalized  value corresponding to critical value of $Z$ for $\mu = 3.5$ : we will be : $\frac{\overline{X} -3.5} {\sqrt{1.96}/3} $ ; so, $\overline{X} = 4.268	$\\
+Come back to $H_{1}$, where $\mu = 3.8$ : $\frac{\overline{X} - \mu}{\sigma /\sqrt n} = \frac{4.268 - 3.8}{ \sqrt{1.96}/3} = 1.007$\\
+Probability corresponding to $z = 1.007$ is $0.8413$ based on the table ; so, 
+\[ 1-\beta = 1- 0.8413 = 1.587 \] is the power of the test.
+\subsection*{2-c)}
+$\alpha$ is the probability to reject $ H_{0}$ ; so, It will be better for customer as far as we have more chance to reject $H_{0}$ ; therefore,  as far as $\alpha$ is bigger , consumer is safer; so, 
+$\alpha = 0.01$
+
+\section*{Problem 3}
+
+\subsubsection*{3-a)}
+$H_{0} : \mu_{1} = \mu_{2}   $ Teacher has no effect on the results\\
+$H_{1} : \mu_{1} \neq \mu_{2}  $ Teacher has effect on the results\\
+
+\begin{align*}
+s_{x_{1}x_{2}} &= \sqrt{ \frac{ (n_{1}-1) \cdot s_{x_{1}}^2 + (n_{2}-1) \cdot s_{x_{2}}^2 }
+{n_{1}+n_{2}-2} } \\
+&= \sqrt{ \frac{(49-1)(4.1)^{2} + (35-1)(3.8)^{2}} {82}  }
+\end{align*}
+
+$s_{x_{1}x_{2}}$ : estimator of the common standard deviation of the two
+samples.\\
+
+\begin{align*}
+t &= \frac{\overline{X}_{1} -\overline{X}_{2}}{s_{x_{1}x_{2}}\sqrt{1/n_{1} + 1/n_{2}}} =
+ \frac{1.2}{3.97 \cdot \sqrt{\frac{1}{49} + \frac{1}{35}}} = 1.36
+\end{align*}
+
+
+
+\subsubsection*{3-b)}
+
+If we assume that actual variance are equals for two samples with different sample size, we can do two-sample t-test  ; \\
+Assume $n_{1} = 7/5 \cdot n_{2} $ . so, consider $n_{1} = 7c $ and $n_{2} = 5c$ Hypothesis are as follows: \\
+$H_{0} : \mu_{1} -\mu_{2} = 0 $ \\
+$H_{1} : \mu_{1} -\mu_{2} \neq 0 $ \\
+Degree of freedom is calculated in the same way in  previous part and  it is $12c-2$ : \\
+\begin{align*}
+s_{x_{1}x_{2}} &= \sqrt{ \frac{ (n_{1}-1) \cdot s_{x_{1}}^2 + (n_{2}-1) \cdot s_{x_{2}}^2}{n_{1}+n_{2}-2}   } \\
+&= \sqrt{ \frac{(7c-1)(4.1)^{2} + (5c-1)(3.8)^{2}}{12c-1}  } \\ 
+t &= \frac{(\overline{X}_{1} -\overline{X}_{2})-1 } {s_{x_{1}x_{2}}\sqrt{1/n_{1} + 1/n_{2}}} = \frac{10.5-9.3-1}{s_{x_{1}x_{2}}\sqrt{ ( 1/7c) + (1/5c) }} 
+\end{align*}
+
+As power of the test is $0.9$ ; then, $\beta = 0.1$ ; so, we must have 
+\[ |t_{0.95, df = 12c-2}| > |t|
+.\]
+To figure out the minimum $c$ to satisfy mentioned inequality : consider as $c =1$, we will have $t_{0.95, df = 1.812}$ \\
+
+
+$s_{x_{1}x_{2}} = \sqrt{\frac{(7 - 1) 4.1^2 + (5 - 1) 3.8^2}{12 - 2}} = 3.982$ \\
+$t = \frac{0.2}{s_{x_{1}x_{2}} \sqrt{1/{7c} + 1/{5c}}} = \frac{0.2}{2.076 \cdot 0.585} = 0.085$,
+therefore
+\[
+|t| < |t_{.95, df = 12c - 2}|
+\] 
+So, the minimum value for $n_1 = 7$ and $n_2 = 5$.
+
+
+
+\subsection*{3-c}
+
+\[
+H_0 : \mu_1 - \mu_2 = 1
+\]
+\[
+t_{0.95, df = 10} = \pm 1.812
+\]
+For $t =1.812$,
+\begin{align*}
+  t &= \frac{\overline{X}_1 - \overline{X}_2 - 1}
+  {s_{X_1 X_2} \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+  = \frac{\overline{X}_1 - \overline{X}_2 - 1}
+  {3.982 \sqrt{\frac{1}{7} + \frac{1}{5}}} = 1.812 \\
+  &\Rightarrow
+  \overline{X}_1 - \overline{X}_2 = 5.224
+\end{align*}
+Since $\mu_1 - \mu_2 = 2$,
+\[
+t = \frac{\overline{X}_1 - \overline{X}_2 - 1}
+  {s_{X_1 X_2} \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} =
+  \frac{5.224 - 2}{2.331} = 1.383
+.\]
+Similarly, for $t = -1.812$,
+\begin{align*}
+ t &= \frac{\overline{X}_1 - \overline{X}_2 - 1}
+  {s_{X_1 X_2} \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+  = \frac{\overline{X}_1 - \overline{X}_2 - 1}
+  {3.982 \sqrt{\frac{1}{7} + \frac{1}{5}}} = -1.812 \\
+  &\Rightarrow
+  \overline{X}_1 - \overline{X}_2 = -3.224 
+\end{align*}
+As $\mu_1 - \mu_2 = 2$,   
+\[
+t = \frac{\overline{X}_1 - \overline{X}_2 - 1}
+  {s_{X_1 X_2} \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} =
+  \frac{-3.224 - 2}{2.331} = -2.241
+\]
+
+\noindent
+Finally,
+\[
+\beta = p(-2.241 \le t \le 1.383) = 0.9 - 0.025 = 0.875
+.\]
+
+
+\newpage
+\section*{Problem 4.}
+First randomly divide $D_{tr}$ to 10 parts : $ D_{tr}[1].....D_{tr}[10]$ .
+\begin{verbatim}
+to be printed, exactly the same
+\end{verbatim}
+  
+
+\section*{Problem 5.}
+
+
+\subsection*{a)}
+
+$SE(x) = E[(f(x)-f^{*}(x))^{2}] = E[( (f(x)-E[f(x)]) +  (E[f(x)]-f^{*}(x)))^{2}]$\\
+Assume $ A = (f(x)-E[f(x)])$ and $B = (E[f(x)]-f^{*}(x))$.\\
+ so, we will have : \\
+$E[A^2+B^2+ 2A B] = E[A^{2}] + E[B^{2}] + E[2 A B] $ \\
+$E[2 A B] = 2 * E[A B]$  as $E[ax] = a E[x]$ and $E[x+y] = E[x]+E[y]$\\
+$E[A B] = E[(f(x)-E[f(x)])(E[f(x)]-f^{*}(x))] $ \\
+$E[ (f(x)-E[f(x)])(E[f(x)]-f^{*}(x))] = E[f(x)E[f(x)] - f(x)f^*(x) - (E[f(x)])^{2} + f^{*}(x) E[f(x)] ] = E[f(x).E[f(x)]] - E[f(x).f^{*}(x)] - E[ (E[f(x)])^{2}]  + E[E[f(x)].f^{*}(x)] $ \\
+....
+
+\subsection*{b)}
+$(f^{*}(x)-E[f(x)])^{2}$ : Bias\\
+$E [(f(x)-E[f(x)])^{2}]$ : Variance \\
+\subsection*{c)}
+(a)\\
+\begin{align*}
+& p(A|\emptyset) = \frac{fr(A,\emptyset)}{fr(\emptyset)}\\
+& = \frac{fr(A)}{1}\\
+& = fr(A)\\
+& p(\emptyset|A) = \frac{fr(A,\emptyset)}{fr(A)}\\
+& = \frac{fr(A)}{fr(A)}\\
+& = 1
+\end{align*}
+(b)\\
+\begin{align*}
+& cond(p\implies q)=\frac{fr(p,q)}{fr(p)} = c1\\
+& cond(p\implies (q,r))=\frac{fr(p,q,r)}{fr(p)} = c2\\
+& cond((p,r)\implies q)=\frac{fr(p,q,r)}{fr(p,r)} = c3\\
+\end{align*}
+Since (p,q) is a subset of (p,q,r) fr(p,q) $>=$ fr(p,q,r), since the denominator for c1 and c2 is same this shows that $c1 > c2$. The numerator for c2 and c3 is same but since fr(p)$>=$fr(p,r) $c3 > c2$. so rule p$\implies$ (q,r) has the lowest confidence.\\
+(c)\\
+if all the rules have the same support then the numerator of all three expressions is the same. (p,r)$\implies$ q has the lowest denominator as it involves the support of  the superset of p. the denominator of other expressions involves the support of p. therefore (p,r)$\implies$ q has the highest confidence.\\
+(d)\\
+\begin{align*}
+& cond(A\implies B)=\frac{fr(A,B)}{fr(A)}\\
+& cond(B\implies C)=\frac{fr(B,C)}{fr(B)}\\
+& cond(A\implies C)=\frac{fr(A,C)}{fr(C)}\\
+\end{align*}
+It is possible for the confidence of A$\implies$ C is greater then the threshold if support of all the subsets of (A,B,C) is the same as (A,B,C). in this way all the 3 rules will have the same value and since first 2 rules have a value greater then threshold the last rule will also have a value greater then threshold.\\
+
+
+%\begin{flushleft}
+%Appropriate User/pass to connect to database is saved in  $id="testDBDataSource"$, in  $mytestDB.spring.xml$. 
+%By following the chain in this xml, we got to $SpringDataServiceManager$ (I explained it in the previous report ; just follow chain of where $id="testDBDataSource"$ is referred.) .
+%\end{flushleft} 
+
+
+\begin{verbatim}
+
+  be printed exactly the same
+
+\end{verbatim}
+
+%\begin{figure*}[ht]
+%\centering
+%\includegraphics[width=7.5cm,height=8.5cm]{x.pdf}
+%\caption{xxx} 
+%\end{figure*}
+
+\begin{table}[H]
+\begin{tabular}{c|c}
+\centering
+Attributes Names            &Correlations Values\\
+\hline
+
+Review Count and Latitude   &-0.009674298\\
+Review Count and Longitude  &-0.08037991\\
+ Review Count and stars	   &0.01893813\\
+ Latitude and Longitude	   &0.4607809\\
+ Latitude and stars	       &-0.03534787\\
+ Longitude and stars	       &-0.03956431\\
+
+\end{tabular}
+\caption{Calculated pairwise correlation among four attributes.}
+\end{table}
+
+
+%
+%
+%\begin{figure}[ht]
+%\begin{minipage}[b]{0.45\linewidth}
+%\centering
+%\includegraphics[width=\textwidth]{Q2.pdf}
+%\caption{ScatterPlot between Longitude and Latitude.}
+%\label{fig:figure1}
+%\end{minipage}
+%\hspace{0.5cm}
+%\begin{minipage}[b]{0.45\linewidth}
+%\centering
+%\includegraphics[width=\textwidth]{Q2-2.pdf}
+%\caption{ScatterPlot between Longitude and Review Count.}
+%\label{fig:figure2}
+%\end{minipage}
+%\end{figure}
+%
+%
+%
+%
+%
+%
+%
+%
+%%\begin{landscape}1 landscape minipage epsfigure
+%\begin{figure}[h]
+%  \hfill
+%  \begin{minipage}[t]{.3\textwidth}
+%    \begin{center}  
+%      \includegraphics[width=\textwidth]{33.pdf}
+%      \caption{}
+%      \label{fig-3}
+%    \end{center}
+%  \end{minipage}
+%  \hfill
+%  \begin{minipage}[t]{.3\textwidth}
+%    \begin{center}  
+%      \includegraphics[width=\textwidth]{3-b2.pdf}
+%      \caption{}
+%      \label{fig-4}
+%    \end{center}
+%  \end{minipage}
+%  \hfill
+%    \begin{minipage}[t]{.3\textwidth}
+%    \begin{center}  
+%	 \includegraphics[width=\textwidth]{3-b3.pdf}
+%      \caption{}
+%      \label{fig-5}
+%    \end{center}
+%  \end{minipage}
+%\end{figure}
+%%\end{landscape}
+%
+%
+%
+\begin{table}[H]
+\begin{tabular}{c|c|c|c|c}
+\centering
+
+Category	&University	&X-square 	&df	&p-value\\
+\hline
+\hfill Active Life	&Rice	&1.0742	&1	&0.3\\
+\hfill Active Life	&Cornell	&0.0066	&1	&0.9355\\
+\hfill Hair Removal	&Rice	&0.0019	&1	&0.9657\\
+\hfill Hair Removal	&Cornell	&0.0019	&1	&0.9657\\
+
+
+\end{tabular}
+\caption{X-square and P-values}
+\end{table}
+
+
+\section*{images are commented:}
+%\newpage
+%\begin{figure}[h]
+%  \hfill
+%  \begin{minipage}[t]{.3\textwidth}
+%    \begin{center}  
+%      \includegraphics[width=\textwidth]{3-b3.pdf}
+%      \caption{Active Life vs Stars with whole data}
+%      \label{fig-3}
+%    \end{center}
+%  \end{minipage}
+%  \hfill
+%  \begin{minipage}[t]{.3\textwidth}
+%    \begin{center}  
+%      \includegraphics[width=\textwidth]{3-b2.pdf}
+%      \caption{Hair Removal vs Stars with whole data}
+%      \label{fig-4}
+%    \end{center}
+%  \end{minipage}
+%  \hfill
+%    \begin{minipage}[t]{.3\textwidth}
+%    \begin{center}  
+%	 \includegraphics[width=\textwidth]{4-HR.pdf}
+%      \caption{Hair Removal vs Review Count with whole data}
+%      \label{fig-5}
+%    \end{center}
+%  \end{minipage}
+%\end{figure}
+%
+%\begin{figure}[h]
+%  \hfill
+%  \begin{minipage}[t]{.3\textwidth}
+%    \begin{center} 
+%      \includegraphics[width=\textwidth]{5-1.pdf}
+%      \caption{Active Life vs Stars with subsampling data}
+%      \label{fig-3}
+%    \end{center}
+%  \end{minipage}
+%  \hfill
+%  \begin{minipage}[t]{.3\textwidth}
+%    \begin{center}  
+%      \includegraphics[width=\textwidth]{5-2.pdf}
+%      \caption{Hair Removal vs Stars with subsampling data}
+%      \label{fig-4}
+%    \end{center}
+%  \end{minipage}
+%  \hfill
+%    \begin{minipage}[t]{.3\textwidth}
+%    \begin{center}  
+%	 \includegraphics[width=\textwidth]{5-3.pdf}
+%      \caption{Hair Removal vs Review Count with subsampling data}
+%      \label{fig-5}
+%    \end{center}
+%  \end{minipage}
+%\end{figure}
+%
+
+
+
+
+
+
+\end{document}
